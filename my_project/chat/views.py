@@ -4,3 +4,5 @@ from django.http import HttpResponse
 def index(request):
     return render(request,"chat/index.html")
 
+def getResponse(request):
+    pass

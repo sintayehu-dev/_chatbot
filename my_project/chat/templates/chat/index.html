@@ -6,6 +6,7 @@
     <title>Chatbot</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'chat/style.css' %}" />
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </head>
 <body>
     <h1 class="title">Chatbot</h1>
@@ -16,5 +17,22 @@
        <input type="text" name="userText" id="textinput" placeholder="Type you message . . ."/>
        <input type="submit" value="Go" id="inputButton"/>
     </div>
+
+    <script>
+        function getUserResponse(){
+            var userText = $('#textinput').val();
+            var userHTML = "<div class='userText'><span>" + userText + "</span></div>";
+            $('#textinput').val("");
+            $('#Chatbot').append(userHTML);
+            $.get('/getResponse',{userMessage:userText}).done(function(data){
+
+            })
+        }
+
+        $('#inputButton').click(function(){
+            getUserResponse();
+        })
+
+    </script>
 </body>
 </html>
