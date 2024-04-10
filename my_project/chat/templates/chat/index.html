@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Chatbot</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'chat/style.css' %}" />
+</head>
+<body>
+    <h1 class="title">Chatbot</h1>
+    <div id="Chatbot">
+       <p class="botText"><span>Hi there</span></p>
+    </div>
+    <div id="userinput">
+       <input type="text" name="userText" id="textinput" placeholder="Type you message . . ."/>
+       <input type="submit" value="Go" id="inputButton"/>
+    </div>
+</body>
+</html>
